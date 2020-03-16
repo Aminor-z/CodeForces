@@ -28,7 +28,7 @@ int main()
 		{
 			v.push_back(t);
 			positive++;
-		}
+		} 
 	}
 	sort(v.begin(), v.end(), greater<int>());
 	int ans = min(k,positive);
