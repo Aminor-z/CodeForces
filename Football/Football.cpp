@@ -18,16 +18,9 @@ int main()
 
 	string s;
 	cin >> s;
-	string hello = "hello";
-	register int t = 0;
-	for (register int i = 0; i < s.length()&&t<hello.length(); i++)
-	{
-		if (s[i] == hello[t])
-		{
-			t++;
-		}
-	}
-	(t == hello.length()) ? puts("YES\n") : puts("NO\n");
+	search_n(s.begin(), s.end(), 7, '1') != s.end() ||
+		search_n(s.begin(), s.end(), 7, '0') != s.end() ?
+		puts("YES\n") : puts("NO\n");
 
 	return 0;
 }

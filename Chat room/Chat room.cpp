@@ -20,7 +20,7 @@ int main()
 	cin >> s;
 	string hello = "hello";
 	register int t = 0;
-	for (register int i = 0; i < s.length()&&t<hello.length(); i++)
+	for (register int i = 0; i < s.length() && t < hello.length(); i++)
 	{
 		if (s[i] == hello[t])
 		{
