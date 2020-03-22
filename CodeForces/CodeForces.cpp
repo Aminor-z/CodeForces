@@ -12,23 +12,35 @@
 #include <set>
 using namespace std;
 
-
+map<string, bool> m;
 int main()
 {
-
-	string s;
-	cin >> s;
-	string hello = "hello";
-	register int t = 0;
-	for (register int i = 0; i < s.length()&&t<hello.length(); i++)
+	register int n, k;
+	string s, t;
+	while (cin >> n >> k >> s)
 	{
-		if (s[i] == hello[t])
+		string::iterator iter = s.begin();
+		for (; iter != s.begin() + k; iter++)
 		{
-			t++;
+			t += *iter;
 		}
-	}
-	(t == hello.length()) ? puts("YES\n") : puts("NO\n");
+		m[t] = true;
+		//string p=t;
+		//reverse(p.begin(),p.end());
+		//m[p] = true;
+		for (; iter != s.end(); iter++)
+		{
 
+
+			t.erase(0, 1);
+			t += *iter;
+			//p = t;
+			//reverse(p.begin(), p.end());
+			m[t] = true;
+			//m[p] = true;
+		}
+		std::cout << m.size() << endl;
+	}
 	return 0;
 }
 
