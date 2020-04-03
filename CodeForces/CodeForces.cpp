@@ -12,35 +12,19 @@
 #include <set>
 using namespace std;
 
-map<string, bool> m;
 int main()
 {
-	register int n, k;
-	string s, t;
-	while (cin >> n >> k >> s)
-	{
-		string::iterator iter = s.begin();
-		for (; iter != s.begin() + k; iter++)
-		{
-			t += *iter;
+	std::ios::sync_with_stdio(false);
+	std::cin.tie(0);
+	int n;
+	cin >> n;
+	for (int i = 2; i < n; i++) {
+		if (n % i == 0) {
+			cout << i << n / i << endl;
+			return 0;
 		}
-		m[t] = true;
-		//string p=t;
-		//reverse(p.begin(),p.end());
-		//m[p] = true;
-		for (; iter != s.end(); iter++)
-		{
-
-
-			t.erase(0, 1);
-			t += *iter;
-			//p = t;
-			//reverse(p.begin(), p.end());
-			m[t] = true;
-			//m[p] = true;
-		}
-		std::cout << m.size() << endl;
 	}
+
 	return 0;
 }
 
